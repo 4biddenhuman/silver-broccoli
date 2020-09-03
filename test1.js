@@ -1,12 +1,14 @@
-let number = 5;
+let numberOfFilms = +prompt("How much films did you watch?")
 
-const obj ={
-    a: 50
+const pmDB = {
+count: numberOfFilms,
+movies: {},
+actors: {},
+genres: [], privat: false
 }
 
-obj.a = 1;
+const a = prompt("One of the latest films?");
+const b = prompt("How would you rate it?")
 
-
-const result = confirm("want sum fuk?");
-console.log("break");
+pmDB.movies[a]=b;
 
