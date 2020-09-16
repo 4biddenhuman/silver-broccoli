@@ -3,9 +3,11 @@
 let numberOfFilms;
 
 function start (){numberOfFilms = +prompt("How much films did you watch?")
-while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms) )
+while (numberOfFilms === '' || numberOfFilms == null || isNaN(numberOfFilms) )
 numberOfFilms = +prompt("How much films did you watch?")
 }
+
+start ();
 
 
 const pmDB = {
@@ -21,7 +23,7 @@ function SavePersonalFilms (){
     const a = prompt("One of the latest films?"),
     b = prompt("How would you rate it?");
 
-    if(a != null && b != null && a != '' && a.length < 50){
+    if(a != null && b != null && a !== '' && a.length < 50){
     pmDB.movies[a] = b;
     console.log('Done');
     } else {
@@ -29,6 +31,8 @@ function SavePersonalFilms (){
     i--
     }
 }
+
+SavePersonalFilms();
 
 function DetectPersonalLevel() {
 
@@ -41,12 +45,24 @@ else
 
 }
 
+DetectPersonalLevel();
+
 function ShowMyDb (hidden) {
 if(!hidden){
   console.log(pmDB);
 }
 ShowMyDb (pmDB.privat);
 }
+
+ShowMyDb ();
+
+function WriteYourGenres (){
+  for (let i = 1; i => 3; i++){
+    pmDB.genres[i-1] = prompt(`Your fav genre ${i}`);
+  }
+}
+
+WriteYourGenres ();
 
 }
 
